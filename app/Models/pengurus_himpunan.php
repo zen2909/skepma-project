@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Certificate extends Model
+class pengurus_himpunan extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'type', 'year', 'status', 'points', 'file_path'];
+
+    protected $fillable = ['jabatan ', 'deskripsi_detail', 'poin'];
 }

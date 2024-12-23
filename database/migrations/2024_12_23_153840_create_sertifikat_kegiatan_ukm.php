@@ -10,14 +10,13 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('certificates', function (Blueprint $table) {
+        Schema::create('sertifikat_kegiatan_ukm', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('criteria');
-            $table->integer('points');
+            $table->string("jabatan");
+            $table->string("deskripsi_detail");
+            $table->integer("poin");
             $table->timestamps();
         });
-
     }
 
     /**
@@ -25,6 +24,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('certificates');
+        Schema::dropIfExists('sertifikat_kegiatan_ukm');
     }
 };
