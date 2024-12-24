@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('sertifikat_forum_komunikasi', function (Blueprint $table) {
             $table->id();
             $table->string("tingkat");
-            $table->string("prestasi");
+            $table->string("status_keikutsertaan");
             $table->integer("poin");
             $table->timestamps();
         });

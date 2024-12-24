@@ -9,5 +9,5 @@ class kegiatan_himpunan extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['jabatan ', 'deskripsi_detail', 'poin'];
+    protected $fillable = ['jabatan', 'deskripsi_detail', 'poin'];
 }

@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CertificateController;
 
-Route::get('/certificates', [CertificateController::class, 'index'])->name('certificates.index');
+Route::get('/', [CertificateController::class, 'index'])->name('certificates.index');
 
 // Menampilkan daftar sertifikat
 Route::get('/certificates/list', [CertificateController::class, 'list'])->name('certificates.list');

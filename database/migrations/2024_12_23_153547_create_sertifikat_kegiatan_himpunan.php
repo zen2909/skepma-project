@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('sertifikat_kegiatan_himpunan', function (Blueprint $table) {
             $table->id();
             $table->string("jabatan");
-            $table->string("Deskripsi_Detail");
+            $table->string("deskripsi_detail");
             $table->integer("poin");
             $table->timestamps();
         });

@@ -9,12 +9,18 @@ return new class extends Migration {
     {
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('type'); // Jenis sertifikat
-            $table->year('year'); // Tahun
+            $table->string('nama');
+            $table->string('jenis');
+            $table->string('tingkat_lomba')->default('-');
+            $table->string('tingkat_kegiatan')->default('-');
+            $table->string('prestasi')->default('-');
+            $table->string('status_keikutsertaan')->default('-');
+            $table->string('jabatan')->default('-');
+            $table->string('deskripsi_detail')->default('-');
+            $table->year('tahun');
             $table->string('status')->default('pending');
-            $table->integer('points')->default(0); // Poin
-            $table->string('file_path'); // Lokasi file
+            $table->integer('points')->default(0);
+            $table->string('file_path');
             $table->timestamps();
         });
     }

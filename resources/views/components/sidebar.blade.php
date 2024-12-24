@@ -56,7 +56,7 @@
                 <a href="{{ route('certificates.index') }}" class="nav-link"><i class="bi bi-house"></i> Home</a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('certificates.list') }}" class="nav-link"><i class="bi bi-info-circle"></i> list</a>
+                <a href="{{ route('certificates.list') }}" class="nav-link"><i class="bi bi-info-circle"></i> Riwayat</a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
