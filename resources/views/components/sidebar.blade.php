@@ -53,16 +53,13 @@
         <hr class="text-secondary">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a href="{{ route('certificates.index') }}" class="nav-link"><i class="bi bi-house"></i> Home</a>
+                <a href="{{ route('certificates.index') }}" class="nav-link"><i class="bi bi-house"></i> Upload Sertifikat</a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('certificates.list') }}" class="nav-link"><i class="bi bi-info-circle"></i> Riwayat</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link"><i class="bi bi-envelope"></i> Contact</a>
+                <a href="/dosen" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Dosen Panel</a>
             </li>
         </ul>
     </nav>

@@ -10,11 +10,12 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('sertifikat_forum_komunikasi', function (Blueprint $table) {
+        Schema::create('sertifikat_lomba', function (Blueprint $table) {
             $table->id();
-            $table->string("tingkat_kegiatan");
-            $table->string("status_keikutsertaan");
-            $table->integer("poin");
+            $table->string('jenis');
+            $table->string('tingkat_lomba')->default('-');
+            $table->string('prestasi')->default('-');
+            $table->integer('points')->default(0);
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('sertifikat_forum_komunikasi');
+        //
     }
 };

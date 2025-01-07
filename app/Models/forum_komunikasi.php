@@ -9,5 +9,6 @@ class forum_komunikasi extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['tingkat', 'status_keikutsertaan', 'poin'];
+    protected $table = 'sertifikat_forum_komunikasi_ilmiah';
+    protected $fillable = ['tingkat_kegiatan', 'status_keikutsertaan', 'poin'];
 }

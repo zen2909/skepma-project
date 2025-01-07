@@ -9,5 +9,6 @@ class lomba_kti extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['tingkat', 'prestasi', 'poin'];
+    protected $table = 'sertifikat_lomba_kti';
+    protected $fillable = ['tingkat_lomba', 'prestasi', 'poin'];
 }

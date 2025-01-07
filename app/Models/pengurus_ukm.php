@@ -9,5 +9,6 @@ class pengurus_ukm extends Model
 {
     use HasFactory;
 
+    protected $table = 'sertifikat_pengurus_ukm';
     protected $fillable = ['jabatan', 'deskripsi_detail', 'poin'];
 }

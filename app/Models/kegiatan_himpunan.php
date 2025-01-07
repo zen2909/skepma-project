@@ -9,5 +9,7 @@ class kegiatan_himpunan extends Model
 {
     use HasFactory;
 
+
+    protected $table = 'sertifikat_kegiatan_himpunan';
     protected $fillable = ['jabatan', 'deskripsi_detail', 'poin'];
 }

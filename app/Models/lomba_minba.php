@@ -9,5 +9,6 @@ class lomba_minba extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['tingkat', 'prestasi', 'poin'];
+    protected $table = 'sertifikat_minba';
+    protected $fillable = ['tingkat_lomba', 'prestasi', 'poin'];
 }

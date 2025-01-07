@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('sertifikat_minba', function (Blueprint $table) {
             $table->id();
-            $table->string("tingkat");
+            $table->string("tingkat_lomba");
             $table->string("prestasi");
             $table->integer("poin");
             $table->timestamps();

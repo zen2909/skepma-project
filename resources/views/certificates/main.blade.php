@@ -48,7 +48,7 @@
                 <table class="table table-striped custom-table table-light">
                     <thead class="table-primary">
                         <tr class="text-center">
-                            <th>Id</th>
+                            <th>No</th>
                             <th>Nama Sertifikat</th>
                             <th>Jenis</th>
                             <th>Tahun</th>
@@ -58,12 +58,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <div class="text-end mt-3">
+                            <strong>Total Points : </strong> {{ $totalPoints }}
+                        </div>
                         @forelse ($certificates as $certificate)
                         <tr>
+
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $certificate->name }}</td>
-                            <td>{{ $certificate->type }}</td>
-                            <td>{{ $certificate->year }}</td>
+                            <td>{{ $certificate->nama }}</td>
+                            <td>{{ $certificate->jenis }}</td>
+                            <td>{{ $certificate->tahun }}</td>
                             <td>
                                 <span class="badge {{ $certificate->status == 'valid' ? 'bg-success' : 'bg-danger' }}">
                                     {{ ucfirst($certificate->status) }}

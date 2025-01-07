@@ -9,5 +9,6 @@ class kegiatan_ukm extends Model
 {
     use HasFactory;
 
+    protected $table = 'sertifikat_kegiatan_ukm';
     protected $fillable = ['jabatan', 'deskripsi_detail', 'poin'];
 }

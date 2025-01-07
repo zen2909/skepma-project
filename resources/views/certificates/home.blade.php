@@ -60,14 +60,14 @@
                                     <label for="jenis" class="form-label">Jenis Sertifikat</label>
                                     <select name="jenis" id="jenis" class="form-select" required onchange="handleTypeChange(this.value)">
                                         <option value="" disabled selected>Pilih Jenis</option>
-                                        <option value="sertifikat_lomba_karya_tulis_ilmiah">Sertifikat Lomba Karya Tulis Ilmiah</option>
-                                        <option value="sertifikat_lomba_kreatifitas_dan_inovasi">Sertifikat Lomba Kreatifitas dan inovasi</option>
-                                        <option value="sertifikat_lomba_minat_dan_bakat">Sertifikat Lomba Minat dan Bakat</option>
-                                        <option value="sertifikat_forum_komunikasi_ilmiah">Sertifikat Forum Komunikasi Ilmiah</option>
-                                        <option value="sertifikat_pengurus_himpunan">Sertifikat Pengurus Himpunan</option>
-                                        <option value="sertifikat_pengurus_ukm">Sertifikat Pengurus UKM</option>
-                                        <option value="sertifikat_kegiatan_himpunan">Sertifikat Kegiatan Himpunan</option>
-                                        <option value="sertifikat_kegiatan_ukm">Sertifikat Kegiatan UKM</option>
+                                        <option value="Sertifikat Lomba Karya Tulis Ilmiah">Sertifikat Lomba Karya Tulis Ilmiah</option>
+                                        <option value="Sertifikat Lomba Kreatifitas dan Inovasi">Sertifikat Lomba Kreatifitas dan inovasi</option>
+                                        <option value="Sertifikat Lomba Minat dan Bakat">Sertifikat Lomba Minat dan Bakat</option>
+                                        <option value="Sertifikat Forum Komunikasi Ilmiah">Sertifikat Forum Komunikasi Ilmiah</option>
+                                        <option value="Sertifikat Pengurus Himpunan">Sertifikat Pengurus Himpunan</option>
+                                        <option value="Sertifikat Pengurus Ukm">Sertifikat Pengurus UKM</option>
+                                        <option value="Sertifikat Kegiatan Himpunan">Sertifikat Kegiatan Himpunan</option>
+                                        <option value="Sertifikat Kegiatan Ukm">Sertifikat Kegiatan UKM</option>
                                     </select>
                                 </div>
 
@@ -91,6 +91,7 @@
                         </div>
                     </form>
                 </div>
+
                 <div class=col>
                     <div class="table-responsive">
                         <table class="table table-striped custom-table table-light">
@@ -107,9 +108,9 @@
                                 @forelse ($certificates as $certificate)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $certificate->name }}</td>
-                                    <td>{{ $certificate->type }}</td>
-                                    <td>{{ $certificate->year }}</td>
+                                    <td>{{ $certificate->nama }}</td>
+                                    <td>{{ $certificate->jenis }}</td>
+                                    <td>{{ $certificate->tahun }}</td>
                                     <td>
                                         <span class="badge {{ $certificate->status == 'valid' ? 'bg-success' : 'bg-danger' }}">
                                             {{ ucfirst($certificate->status) }}
@@ -157,98 +158,98 @@
         const dynamicFields = document.getElementById('dynamic-fields');
         dynamicFields.innerHTML = ''; // Hapus isi sebelumnya
 
-        if (selectedType === 'sertifikat_lomba_karya_tulis_ilmiah' || selectedType === 'sertifikat_lomba_kreatifitas_dan_inovasi' || selectedType === 'sertifikat_lomba_minat_dan_bakat') {
+        if (selectedType === 'Sertifikat Lomba Karya Tulis Ilmiah' || selectedType === 'Sertifikat Lomba Kreatifitas dan Inovasi' || selectedType === 'Sertifikat Lomba Minat dan Bakat') {
             dynamicFields.innerHTML = `
                 <div class="mb-3">
-                    <label for="tingkat" class="form-label">Tingkat Lomba</label>
-                    <select name="tingkat" id="tingkat" class="form-select" required>
+                    <label for="tingkat_lomba" class="form-label">Tingkat_lomba Lomba</label>
+                    <select name="tingkat_lomba" id="tingkat_lomba" class="form-select" required>
                         <option value="" disabled selected>Pilih Tingkat Lomba</option>
-                        <option value="internasional">Internasional</option>
-                        <option value="nasional">Nasional</option>
-                        <option value="regional">Regional</option>
-                        <option value="institut">Institut</option>
-                        <option value="fakultas">Fakultas</option>
-                        <option value="jurusan">Jurusan</option>
+                        <option value="Internasional">Internasional</option>
+                        <option value="Nasional">Nasional</option>
+                        <option value="Regional">Regional</option>
+                        <option value="Institut">Institut</option>
+                        <option value="Fakultas">Fakultas</option>
+                        <option value="Jurusan">Jurusan</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="prestasi" class="form-label">Prestasi</label>
                     <select name="prestasi" id="prestasi" class="form-select" required>
                         <option value="" disabled selected>Pilih Prestasi</option>
-                        <option value="juara_123">Juara 1/2/3</option>
-                        <option value="finalis">Finalis</option>
-                        <option value="peserta">Peserta</option>
+                        <option value="Juara 1/2/3">Juara 1/2/3</option>
+                        <option value="Finalis">Finalis</option>
+                        <option value="Peserta">Peserta</option>
                     </select>
                 </div>
             `;
-        } else if (selectedType === 'sertifikat_forum_komunikasi_ilmiah') {
+        } else if (selectedType === 'Sertifikat Forum Komunikasi Ilmiah') {
             dynamicFields.innerHTML = `
                 <div class="mb-3">
-                    <label for="tingkat" class="form-label">Tingkat Kegiatan</label>
-                    <select name="tingkat" id="tingkat" class="form-select" required>
+                    <label for="tingkat_kegiatan" class="form-label">Tingkat_kegiatan Kegiatan</label>
+                    <select name="tingkat_kegiatan" id="tingkat_kegiatan" class="form-select" required>
                         <option value="" disabled selected>Pilih Tingkat Kegiatan</option>
-                        <option value="internasional">Internasional</option>
-                        <option value="nasional">Nasional</option>
-                        <option value="regional">Regional</option>
-                        <option value="institut">Institut</option>
-                        <option value="fakultas">Fakultas</option>
-                        <option value="jurusan">Jurusan</option>
+                        <option value="Internasional">Internasional</option>
+                        <option value="Nasional">Nasional</option>
+                        <option value="Regional">Regional</option>
+                        <option value="Institut">Institut</option>
+                        <option value="Fakultas">Fakultas</option>
+                        <option value="Jurusan">Jurusan</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="status_keikutsertaan" class="form-label">Status Keikutsertaan</label>
                     <select name="status_keikutsertaan" id="status_keikutsertaan" class="form-select" required>
                         <option value="" disabled selected>Pilih Status Keikutsertaan</option>
-                        <option value="pembicara">Pembicara</option>
-                        <option value="peserta">Peserta</option>
+                        <option value="Pembicara">Pembicara</option>
+                        <option value="Peserta">Peserta</option>
                     </select>
                 </div>
             `;
-        } else if (selectedType === 'sertifikat_pengurus_himpunan' || selectedType === 'sertifikat_pengurus_ukm') {
+        } else if (selectedType === 'Sertifikat Pengurus Himpunan' || selectedType === 'Sertifikat Pengurus Ukm') {
             dynamicFields.innerHTML = `
                 <div class="mb-3">
                     <label for="jabatan" class="form-label">Jabatan</label>
                     <select name="jabatan" id="jabatan" class="form-select" required>
                         <option value="" disabled selected>Pilih Jabatan</option>
-                        <option value="pengurus_inti">Pengurus Inti</option>
-                        <option value="koordinator">Koordinator</option>
-                        <option value="anggota_aktif">Anggota Aktif</option>
+                        <option value="Pengurus inti">Pengurus Inti</option>
+                        <option value="Koordinator">Koordinator</option>
+                        <option value="Anggota aktif">Anggota Aktif</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="deskripsi_detail" class="form-label">Deskripsi Detail</label>
                     <select name="deskripsi_detail" id="deskripsi_detail" class="form-select" required>
                         <option value="" disabled selected>Pilih Deskripsi</option>
-                        <option value="ketua">Ketua</option>
-                        <option value="sekretaris">Sekretaris</option>
-                        <option value="bendahara">Bendahara</option>
-                        <option value="koordinator">Koordinator</option>
-                        <option value="anggota_aktif">Anggota</option>
+                        <option value="Ketua">Ketua</option>
+                        <option value="Sekretaris">Sekretaris</option>
+                        <option value="Bendahara">Bendahara</option>
+                        <option value="Koordinator">Koordinator</option>
+                        <option value="Anggota aktif">Anggota</option>
                     </select>
                 </div>
             `;
-        } else if (selectedType === 'sertifikat_kegiatan_himpunan' || selectedType === 'sertifikat_kegiatan_ukm') {
+        } else if (selectedType === 'Sertifikat Kegiatan Himpunan' || selectedType === 'Sertifikat Kegiatan Ukm') {
             dynamicFields.innerHTML = `
                 <div class="mb-3">
                     <label for="jabatan" class="form-label">Jabatan</label>
                     <select name="jabatan" id="jabatan" class="form-select" required>
                         <option value="" disabled selected>Pilih Jabatan</option>
-                        <option value="panitia_inti">Panitia Inti</option>
-                        <option value="koordinator">Koordinator</option>
-                        <option value="panitia_aktif">Panitia Aktif</option>
-                        <option value="peserta">Peserta</option>
+                        <option value="Panitia_inti">Panitia Inti</option>
+                        <option value="Koordinator">Koordinator</option>
+                        <option value="Panitia_aktif">Panitia Aktif</option>
+                        <option value="Peserta">Peserta</option>
                     </select>
                 </div>
                <div class="mb-3">
                     <label for="deskripsi_detail" class="form-label">Deskripsi Detail</label>
                     <select name="deskripsi_detail" id="deskripsi_detail" class="form-select" required>
                         <option value="" disabled selected>Pilih Deskripsi</option>
-                        <option value="ketua">Ketua</option>
-                        <option value="sekretaris">Sekretaris</option>
-                        <option value="bendahara">Bendahara</option>
-                        <option value="koordinator">Koordinator</option>
-                        <option value="anggota_aktif">Anggota</option>
-                        <option value="peserta">Peserta</option>
+                        <option value="Ketua">Ketua</option>
+                        <option value="Sekretaris">Sekretaris</option>
+                        <option value="Bendahara">Bendahara</option>
+                        <option value="Koordinator">Koordinator</option>
+                        <option value="Anggota aktif">Anggota</option>
+                        <option value="Peserta">Peserta</option>
                     </select>
                 </div>
             `;

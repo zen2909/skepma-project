@@ -14,16 +14,16 @@ class CertificateSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = Faker::create();
+        // $faker = Faker::create();
 
-        for ($i = 1; $i <= 20; $i++) {
-            DB::table('certificates')->insert([
-                'name' => $faker->name,
-                'criteria' => $faker->randomElement,
-                'points' => $faker->randomDigitNotNull,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-        }
+        // for ($i = 1; $i <= 20; $i++) {
+        //     DB::table('certificates')->insert([
+        //         'name' => $faker->name,
+        //         'criteria' => $faker->randomElement,
+        //         'points' => $faker->randomDigitNotNull,
+        //         'created_at' => now(),
+        //         'updated_at' => now(),
+        //     ]);
+        // }
     }
 }
